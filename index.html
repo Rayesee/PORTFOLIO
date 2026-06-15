@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="李睿作品集 — PORTFOLIO OF LIRUI">
+
+  <title>李睿｜作品集 PORTFOLIO OF LIRUI</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <a class="skip-link" href="#slide-1">跳至内容</a>
+
+
+
+  <!-- Unified ambient page background -->
+
+  <div class="ambient" aria-hidden="true">
+
+    <!-- Starfield — subtle night-sky ambience behind slides -->
+
+    <div class="starfield" aria-hidden="true">
+
+      <div class="starfield__sky-tint"></div>
+
+      <div class="starfield__milkyway"></div>
+
+
+
+      <div class="starfield__layer starfield__layer--far" data-depth="0.12" data-parallax="0.06">
+
+        <div class="starfield__drift starfield__drift--far">
+
+          <canvas class="starfield__canvas"></canvas>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="starfield__layer starfield__layer--mid" data-depth="0.32" data-parallax="0.12">
+
+        <div class="starfield__drift starfield__drift--mid">
+
+          <canvas class="starfield__canvas"></canvas>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="starfield__layer starfield__layer--near" data-depth="0.52" data-parallax="0.2">
+
+        <div class="starfield__drift starfield__drift--near">
+
+          <canvas class="starfield__canvas"></canvas>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="starfield__twinkles">
+
+        <span class="starfield__twinkle starfield__twinkle--1" data-depth="0.4"></span>
+
+        <span class="starfield__twinkle starfield__twinkle--2" data-depth="0.55"></span>
+
+        <span class="starfield__twinkle starfield__twinkle--3" data-depth="0.28"></span>
+
+        <span class="starfield__twinkle starfield__twinkle--4" data-depth="0.48"></span>
+
+        <span class="starfield__twinkle starfield__twinkle--5" data-depth="0.62"></span>
+
+        <span class="starfield__twinkle starfield__twinkle--6" data-depth="0.36"></span>
+
+      </div>
+
+    </div>
+
+    <div class="ambient__gradient ambient__gradient--a"></div>
+
+    <div class="ambient__gradient ambient__gradient--b"></div>
+
+    <div class="ambient__grid"></div>
+
+    <svg class="ambient__flow" viewBox="0 0 1440 3200" preserveAspectRatio="xMidYMid slice">
+
+      <path class="ambient__flow-path" d="M0,120 Q360,40 720,160 T1440,80" />
+
+      <path class="ambient__flow-path ambient__flow-path--secondary" d="M0,800 Q480,720 960,880 T1440,760" />
+
+      <path class="ambient__flow-path ambient__flow-path--accent" d="M0,1600 Q720,1480 1440,1720" />
+
+      <path class="ambient__flow-path ambient__flow-path--secondary" d="M0,2400 Q360,2520 720,2360 T1440,2480" />
+
+    </svg>
+
+    <div class="ambient__orbs">
+
+      <span class="ambient__orb ambient__orb--1" data-depth="0.35"></span>
+
+      <span class="ambient__orb ambient__orb--2" data-depth="0.55"></span>
+
+      <span class="ambient__orb ambient__orb--3" data-depth="0.45"></span>
+
+    </div>
+
+
+
+    <!-- PPT-inspired floating red motifs (brush dots & strokes) -->
+
+    <div class="red-float-layer" aria-hidden="true">
+
+      <span class="red-motif red-motif--dot red-motif--1" data-depth="0.35" data-parallax="0.12"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--dot red-motif--2" data-depth="0.55" data-parallax="0.18"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--dot red-motif--3" data-depth="0.45" data-parallax="0.08"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--dot red-motif--4" data-depth="0.65" data-parallax="0.22"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--ring red-motif--5" data-depth="0.4" data-parallax="0.15"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--ring red-motif--6" data-depth="0.5" data-parallax="0.1"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--stroke red-motif--7" data-depth="0.3" data-parallax="0.14"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--stroke red-motif--8" data-depth="0.6" data-parallax="0.2"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--blob red-motif--9" data-depth="0.25" data-parallax="0.06"><span class="red-motif__body"></span></span>
+
+      <span class="red-motif red-motif--blob red-motif--10" data-depth="0.7" data-parallax="0.16"><span class="red-motif__body"></span></span>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Scroll progress through entire portfolio -->
+
+  <div class="scroll-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="浏览进度">
+
+    <div class="scroll-progress__fill"></div>
+
+    <span class="scroll-progress__label">0%</span>
+
+  </div>
+
+
+
+  <header class="page-header">
+
+    <p class="page-header__brand">李睿 · 作品集</p>
+
+    <p class="page-header__hint">向下滚动浏览</p>
+
+  </header>
+
+
+
+  <nav class="section-nav" aria-label="幻灯片导航">
+
+    <ol class="section-nav-list">
+
+      <li><a href="#slide-1" data-slide="1" aria-label="第 1 页"><span>1</span></a></li>
+
+      <li><a href="#slide-2" data-slide="2" aria-label="第 2 页"><span>2</span></a></li>
+
+      <li><a href="#slide-3" data-slide="3" aria-label="第 3 页"><span>3</span></a></li>
+
+      <li><a href="#slide-4" data-slide="4" aria-label="第 4 页"><span>4</span></a></li>
+
+      <li><a href="#slide-5" data-slide="5" aria-label="第 5 页"><span>5</span></a></li>
+
+      <li><a href="#slide-6" data-slide="6" aria-label="第 6 页"><span>6</span></a></li>
+
+      <li><a href="#slide-7" data-slide="7" aria-label="第 7 页"><span>7</span></a></li>
+
+      <li><a href="#slide-8" data-slide="8" aria-label="第 8 页"><span>8</span></a></li>
+
+      <li><a href="#slide-9" data-slide="9" aria-label="第 9 页"><span>9</span></a></li>
+
+      <li><a href="#slide-10" data-slide="10" aria-label="第 10 页"><span>10</span></a></li>
+
+      <li><a href="#slide-11" data-slide="11" aria-label="第 11 页"><span>11</span></a></li>
+
+      <li><a href="#slide-12" data-slide="12" aria-label="第 12 页"><span>12</span></a></li>
+
+      <li><a href="#slide-13" data-slide="13" aria-label="第 13 页"><span>13</span></a></li>
+
+      <li><a href="#slide-14" data-slide="14" aria-label="第 14 页"><span>14</span></a></li>
+
+    </ol>
+
+  </nav>
+
+
+
+  <main class="presentation">
+
+    <section class="slide-section" id="slide-1" data-index="1" data-theme="cover" aria-label="封面：李睿作品集 PORTFOLIO">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide1.png" alt="封面 — 李睿作品集 PORTFOLIO OF LIRUI" width="1920" height="1080" loading="eager" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">1</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-2" data-index="2" data-theme="profile" aria-label="个人简介：李睿 LIRUI 东北林业大学">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide2.png" alt="个人简介 — 李睿 LIRUI 东北林业大学 工作经历" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">2</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-3" data-index="3" data-theme="work" aria-label="工作经历：网站运营方案">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide3.png" alt="工作经历 — 网站运营方案" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">3</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-4" data-index="4" data-theme="design" aria-label="项目：特殊需求网站页面设计">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide4.png" alt="协助设计师 — 特殊需求网站页面设计" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">4</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-5" data-index="5" data-theme="maintenance" aria-label="网站页面维护">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide5.png" alt="MAINTENANCE WEB PAGE — 网站页面维护" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">5</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-6" data-index="6" data-theme="documents" aria-label="日常工作文件">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide6.png" alt="日常工作文件 WORK DOCUMENTS" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">6</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-7" data-index="7" data-theme="metrics" aria-label="网站运营成果">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide7.png" alt="网站运营成果 — 站内站外自媒体数据" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <!-- Animated metric overlays — positioned over key stats on slide 7 -->
+
+        <div class="metric-overlays" aria-hidden="true">
+
+          <div class="metric-chip metric-chip--a" style="--delay: 0">
+
+            <span class="metric-chip__value" data-count="500" data-suffix="+">0</span>
+
+            <span class="metric-chip__label">月发文</span>
+
+          </div>
+
+          <div class="metric-chip metric-chip--b" style="--delay: 1">
+
+            <span class="metric-chip__value" data-count="20" data-suffix="w+">0</span>
+
+            <span class="metric-chip__label">月流量</span>
+
+          </div>
+
+          <div class="metric-chip metric-chip--c" style="--delay: 2">
+
+            <span class="metric-chip__value" data-count="1.5" data-suffix="%" data-decimals="1">0</span>
+
+            <span class="metric-chip__label">转化率</span>
+
+          </div>
+
+          <div class="metric-chip metric-chip--d" style="--delay: 3">
+
+            <span class="metric-chip__value" data-count="150" data-suffix="w+">0</span>
+
+            <span class="metric-chip__label">月业绩</span>
+
+          </div>
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">7</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-8" data-index="8" data-theme="matrix" aria-label="自媒体矩阵建设工作">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide8.png" alt="自媒体矩阵建设工作 Multi-Channel Network" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">8</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-9" data-index="9" data-theme="zhihu" aria-label="知乎运营">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide9.png" alt="ZHIHU Operations Manager — 知乎运营成果" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">9</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-10" data-index="10" data-theme="bilibili" aria-label="B站运营">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide10.png" alt="bilibili Operations Manager — B站运营" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">10</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-11" data-index="11" data-theme="news" aria-label="其他资讯号运营成果">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide11.png" alt="其他资讯号 — 百家号头条号运营成果" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">11</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-12" data-index="12" data-theme="workplace" aria-label="职场其他工作交流">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide12.png" alt="NEW WAY — 职场其他工作交流" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">12</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section" id="slide-13" data-index="13" data-theme="skills" aria-label="技能与证书">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide13.png" alt="OTHER THING — 技能 PS AI PR Office CET-4" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">13</div>
+
+      </div>
+
+    </section>
+
+
+
+    <section class="slide-section slide-section--final" id="slide-14" data-index="14" data-theme="closing" aria-label="自我评价">
+
+      <div class="section-connector" aria-hidden="true"><span class="section-connector__dot"></span></div>
+
+      <div class="slide-canvas" data-tilt>
+
+        <div class="slide-red-glow" aria-hidden="true"></div>
+
+        <div class="slide-parallax">
+
+          <img class="slide-render" src="assets/slide14.png" alt="自我评价 Self-evaluation" width="1920" height="1080" loading="lazy" decoding="async">
+
+        </div>
+
+        <div class="slide-number" aria-hidden="true">14</div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <footer class="page-footer">
+
+    <p>李睿 · PORTFOLIO OF LIRUI · 2022</p>
+
+  </footer>
+
+
+
+  <script src="js/presentation.js"></script>
+
+  <script src="js/animations.js"></script>
+
+</body>
+
+</html>
+
