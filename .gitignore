@@ -2,3 +2,7 @@
 *.log
 .env
 .env.*
+
+# Source assets kept locally; deploy optimized JPEGs in assets/opt/
+assets/slide*.png
+assets/image*

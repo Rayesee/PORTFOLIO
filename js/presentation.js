@@ -78,6 +78,56 @@
 
 
 
+  /* Lazy-load slide images near viewport */
+
+  const lazyImages = Array.from(document.querySelectorAll(".slide-render[data-src]"));
+
+  const imageObserver = new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if (!entry.isIntersecting) return;
+
+        const img = entry.target;
+
+        const src = img.getAttribute("data-src");
+
+        if (!src || img.getAttribute("src")) return;
+
+        img.src = src;
+
+        img.removeAttribute("data-src");
+
+        imageObserver.unobserve(img);
+
+      });
+
+    },
+
+    { rootMargin: "80% 0px", threshold: 0.01 }
+
+  );
+
+
+
+  lazyImages.forEach((img) => imageObserver.observe(img));
+
+
+
+  if (lazyImages[0]) {
+
+    const preloadNext = new Image();
+
+    preloadNext.decoding = "async";
+
+    preloadNext.src = lazyImages[0].getAttribute("data-src");
+
+  }
+
+
+
   /* Smooth scroll for nav clicks */
 
   navLinks.forEach((link) => {

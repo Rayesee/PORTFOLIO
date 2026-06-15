@@ -28,11 +28,11 @@
 
   const starLayerConfigs = {
 
-    far:  { count: 220, maxSize: 1.1, minOpacity: 0.12, maxOpacity: 0.38, twinkleRatio: 0 },
+    far:  { count: 130, maxSize: 1.1, minOpacity: 0.12, maxOpacity: 0.38, twinkleRatio: 0 },
 
-    mid:  { count: 110, maxSize: 1.7, minOpacity: 0.2,  maxOpacity: 0.58, twinkleRatio: 0.12 },
+    mid:  { count: 65, maxSize: 1.7, minOpacity: 0.2,  maxOpacity: 0.58, twinkleRatio: 0.12 },
 
-    near: { count: 42,  maxSize: 2.4, minOpacity: 0.35, maxOpacity: 0.82, twinkleRatio: 0.28 },
+    near: { count: 24,  maxSize: 2.4, minOpacity: 0.35, maxOpacity: 0.82, twinkleRatio: 0.28 },
 
   };
 
@@ -366,9 +366,23 @@
 
   if (starLayers.length) {
 
-    initStarfield();
+    const bootStarfield = () => {
 
-    window.addEventListener("resize", onStarfieldResize, { passive: true });
+      initStarfield();
+
+      window.addEventListener("resize", onStarfieldResize, { passive: true });
+
+    };
+
+    if ("requestIdleCallback" in window) {
+
+      requestIdleCallback(bootStarfield, { timeout: 1200 });
+
+    } else {
+
+      window.addEventListener("load", bootStarfield, { once: true });
+
+    }
 
   }
 

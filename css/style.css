@@ -1354,6 +1354,10 @@ body.is-scrolling .scroll-progress__label {
 
   scroll-margin-top: 24px;
 
+  content-visibility: auto;
+
+  contain-intrinsic-size: auto 720px;
+
   opacity: 0;
 
   transform: translateY(28px) scale(0.985);
@@ -1622,7 +1626,15 @@ body.is-scrolling .scroll-progress__label {
 
   user-select: none;
 
+  background: rgba(12, 10, 18, 0.35);
+
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+.slide-render:not([src]) {
+
+  opacity: 0.35;
 
 }
 
